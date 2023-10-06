@@ -1,6 +1,6 @@
 # template engine test
 
-| name                   | runs  | ns/op | exec time, s |
-|------------------------|-------|-------|--------------|
-| BenchmarkJetRender-8   | 62038 | 18721 | 1.460        |
-| BenchmarkPlushRender-8 | 73578 | 15919 | 1.447        |                        |       |       |              |   |
+| name                   | runs   | ns/op | exec time, s |
+|------------------------|--------|-------|--------------|
+| BenchmarkJetRender-8   | 106216 | 10601 | 1.341        |
+| BenchmarkPlushRender-8 | 127006 | 9085  | 1.360        |                        |       |       |              |   |

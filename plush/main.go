@@ -1,28 +1,24 @@
 package main
 
 import (
-	"github.com/gobuffalo/plush"
 	"io"
 	"os"
+
+	"github.com/gobuffalo/plush"
 )
 
 func main() {
-	in, err := os.Open("./plush/source/test.plush")
-	if err != nil {
-		panic(err)
-	}
-
-	render(in, os.Stdout)
+	render(os.Stdout)
 }
 
-func render(input *os.File, output io.Writer) {
+func render(output io.Writer) {
 	ctx := plush.NewContext()
 
 	ctx.Set("concat", func(a string, b string) string {
 		return a + b
 	})
 
-	res, err := plush.RenderR(input, ctx)
+	res, err := plush.Render("<% let s = [\"foo\", \"bar\", \"asd\"] %>\n<%= concat(s[0], s[1]) %>", ctx)
 	if err != nil {
 		panic(err)
 	}

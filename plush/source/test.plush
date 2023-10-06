@@ -1,2 +1,0 @@
-<% let s = ["foo", "bar", "asd"] %>
-<%= concat(s[0], s[1]) %>
